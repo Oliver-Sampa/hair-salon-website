@@ -32,6 +32,8 @@ const Logo = styled.h1`
 const Links = styled.ul`
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 
   a {
     font-weight: 500;
@@ -48,7 +50,13 @@ const Links = styled.ul`
     color: ${({ theme }) => theme.colors.accent};
     border-color: ${({ theme }) => theme.colors.accent};
   }
+
+  @media (max-width: 600px) {
+    gap: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
 `;
+
 
 function Navbar() {
   return (
