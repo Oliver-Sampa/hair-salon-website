@@ -41,10 +41,10 @@ function ServiceCard({ service }) {
 
   return (
     <Card>
-      <img src={image} alt={name} />
+      {image && <img src={image} alt={name} />}
       <Info>
         <h3>{name}</h3>
-        <Price>${price}</Price>
+        {price && <Price>{price}</Price>}
       </Info>
     </Card>
   );
