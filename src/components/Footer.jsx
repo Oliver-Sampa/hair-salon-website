@@ -29,7 +29,7 @@ function Footer() {
   return (
     <FooterWrapper>
       <Inner>
-        <span>© {new Date().getFullYear()} Hair Studio. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Laritza's Hair Salon. All rights reserved.</span>
         <Contact>Phone: (813) 368-6822</Contact>
       </Inner>
     </FooterWrapper>
