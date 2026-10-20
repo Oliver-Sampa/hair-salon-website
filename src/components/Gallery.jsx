@@ -1,4 +1,7 @@
-
+import before1 from '../assets/before-after-1.webp';
+import after1 from '../assets/before-after-2.webp';
+import before2 from '../assets/before-after-3.webp';
+import after2 from '../assets/before-after-4.webp';
 import styled from 'styled-components';
 
 const GalleryWrapper = styled.section`
@@ -37,11 +40,12 @@ const ImageBlock = styled.div`
   position: relative;
 
   img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-  }
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+  
 `;
 
 const Label = styled.span`
@@ -64,21 +68,17 @@ const Caption = styled.p`
 
 const transformations = [
   {
-    before: 'https://placehold.co/400x300/222/d4af37?text=Before',
-    after: 'https://placehold.co/400x300/d4af37/000?text=After',
-    caption: 'Classic Fade',
+    before: before1,
+    after: after1,
+    caption: 'Cut & Style',
   },
   {
-    before: 'https://placehold.co/400x300/222/d4af37?text=Before',
-    after: 'https://placehold.co/400x300/d4af37/000?text=After',
+    before: before2,
+    after: after2,
     caption: 'Curls & Styling',
   },
-  {
-    before: 'https://placehold.co/400x300/222/d4af37?text=Before',
-    after: 'https://placehold.co/400x300/d4af37/000?text=After',
-    caption: 'Beard Trim',
-  },
 ];
+
 
 export default function Gallery() {
   return (
@@ -94,13 +94,13 @@ export default function Gallery() {
               </ImageBlock>
               <ImageBlock>
                 <img src={item.after} alt={`After - ${item.caption}`} />
-                <Label>After</Label>
-              </ImageBlock>
-            </ImagePair>
-            <Caption>{item.caption}</Caption>
-          </Card>
-        ))}
-      </Grid>
-    </GalleryWrapper>
+                              <Label>After</Label>
+            </ImageBlock>
+          </ImagePair>
+          <Caption>{item.caption}</Caption>
+        </Card>
+      ))}
+    </Grid>
+  </GalleryWrapper>
   );
 }
